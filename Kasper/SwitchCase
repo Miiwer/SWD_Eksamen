@@ -1,0 +1,36 @@
+switch(currentState){
+    case On:
+    switch(Event){
+        case Power: {
+            currentState = Off;
+            TurnLampOff();
+        }
+        
+        case Mode: {
+            switch(currentSubState) {
+                case Steady: {
+                    currentSubState = Blinking;
+                    TurnBlinkOn():
+                }
+                
+                case Blinking {
+                    currentSubState = Steady;
+                    TurnBlinkOff();
+                }
+            }
+        }
+    }
+    
+    case Off:
+    switch(Event) {
+        case Power: {
+            currentState = on;
+            currentSubState = Steady;
+            TurnLampOn();
+        }
+        
+        case Mode: {
+            break;
+        }
+    }
+}
